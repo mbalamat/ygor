@@ -1,6 +1,10 @@
-import bot, notify
+import bot, notify, os, hashlib
 
-receiver_address = os.environ['RECEIVER_ADDRESS']
+try:
+    receiver_address = os.environ['RECEIVER_ADDRESS']
+except:
+    print 'Set env variable RECEIVER_ADDRESS to the email address you want to send the alerts.'
+
 urls = bot.open_config_file()
 
 for url in urls:

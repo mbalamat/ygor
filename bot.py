@@ -9,7 +9,7 @@ def open_config_file():
 
 def write_latest_file(filename, content):
     with open('./versions/' + filename, 'w') as f:
-        f.write(content)
+        f.write(str(content))
 
 def load_remote_html(url):
     try:
@@ -27,7 +27,8 @@ def load_local_html(url):
     if os.path.isdir('./versions/'):
         if os.path.isfile('./versions/' + filename):
             with open('./versions/' + filename, 'r') as local_html:
-                current_html = local_html.readlines().replace('\n', '')
+                current_html = local_html.readlines()
+            current_html = ''.join(current_html).replace('\n', '')
             current_html = bs(current_html)
             return current_html
         else:
@@ -39,7 +40,7 @@ def load_local_html(url):
         sys.exit()
 
 def check_diff(current_html, remote_html):
-    diff = difflib.ndiff(str(current_html).splitlines(), str(remote_html).splitlines())
+    diff = difflib.ndiff(str(current_html.prettify()).splitlines(), str(remote_html.prettify()).splitlines())
     additions = ''.join(x[2:] for x in diff if x.startswith('+ '))
     deletions = ''.join(x[2:] for x in diff if x.startswith('- '))
     if len(additions) == 0 and len(deletions) == 0:

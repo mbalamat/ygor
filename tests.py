@@ -31,4 +31,3 @@ if bot.check_diff(bot.load_remote_html('https://mbalamat.site/test.html'), bot.l
     print_with_color(True, 'check_diff(): Different sites as input')
 else:
     print_with_color(False, 'check_diff(): Different sites as input')
-
