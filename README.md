@@ -3,9 +3,9 @@
 
 An html bot / assistant
 ###The problem:
-I think every student at some point in their lives forgot to do important tasks like homework, registration to a course etc. because they didn't visit their school's / teacher's website regularly
+Many students often forget to visit their school's / teacher's website and as a result they don't get informed about important tasks like homework, registration to a course, exam etc. and this problem affects their academic development.
 
 ###The solution:
-Simple. A bot / assistant that regularly checks web pages you are interested in and if a change occurs it notifies you.
+Simple. A bot / assistant that checks web pages you are interested in and every time a change occurs, it notifies you.
 
 
