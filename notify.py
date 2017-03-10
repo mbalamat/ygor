@@ -1,4 +1,4 @@
-import smtplib, os
+import smtplib, os, sys
 
 try:
     email_address = os.environ['EMAIL_ADDRESS']
@@ -6,6 +6,7 @@ try:
     receiver_address = os.environ['RECEIVER_ADDRESS']
 except:
     print 'Env variables not set please set EMAIL_ADDRESS, EMAIL_PASSWD and RECEIVER_ADDRESS.'
+    sys.exit(1)
 
 def notify(notification_method, receiver_address, url):
     html_mail = '''\

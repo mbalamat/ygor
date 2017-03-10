@@ -14,7 +14,7 @@ def write_latest_file(filename, content):
 def load_remote_html(url):
     try:
         latest_html = urllib2.urlopen(url).read()
-        latest_html = bs(latest_html)
+        latest_html = bs(latest_html, "html.parser")
         if len(latest_html) != 0:
             return latest_html
         else:
@@ -28,8 +28,8 @@ def load_local_html(url):
         if os.path.isfile('./versions/' + filename):
             with open('./versions/' + filename, 'r') as local_html:
                 current_html = local_html.readlines()
-            current_html = ''.join(current_html).replace('\n', '')
-            current_html = bs(current_html)
+            current_html = ''.join(current_html)
+            current_html = bs(current_html, "html.parser")
             return current_html
         else:
             print 'New site to monitor found, making local copy of the site...'
@@ -40,7 +40,7 @@ def load_local_html(url):
         sys.exit()
 
 def check_diff(current_html, remote_html):
-    diff = difflib.ndiff(str(current_html.prettify()).splitlines(), str(remote_html.prettify()).splitlines())
+    diff = difflib.ndiff(str(current_html.prettify('utf-8')).splitlines(), str(remote_html.prettify('utf-8')).splitlines())
     additions = ''.join(x[2:] for x in diff if x.startswith('+ '))
     deletions = ''.join(x[2:] for x in diff if x.startswith('- '))
     if len(additions) == 0 and len(deletions) == 0:
