@@ -22,9 +22,9 @@ $ pip install -r requirements.txt
 * Set the environment variables used by igor:
 
 ```
-$ export EMAIL_ADDRESS='your@gmail.com'
-$ export EMAIL_PASSWD='yOuRp@ssWd'
-$ export RECEIVER_ADDRESS='your@gmail.com'
+$ export IGOR_EMAIL_ADDRESS='your@gmail.com'
+$ export IGOR_EMAIL_PASSWD='yOuRp@ssWd'
+$ export IGOR_RECEIVER_ADDRESS='your@gmail.com'
 ```
 
 :point_up: Note that the gmail account that the bot will use to send emails has to enable less secure apps, you can to that [here] (https://www.google.com/settings/security/lesssecureapps).

@@ -1,11 +1,11 @@
 import smtplib, os, sys
 
 try:
-    email_address = os.environ['EMAIL_ADDRESS']
-    email_passwd = os.environ['EMAIL_PASSWD']
-    receiver_address = os.environ['RECEIVER_ADDRESS']
+    email_address = os.environ['IGOR_EMAIL_ADDRESS']
+    email_passwd = os.environ['IGOR_EMAIL_PASSWD']
+    receiver_address = os.environ['IGOR_RECEIVER_ADDRESS']
 except:
-    print 'Env variables not set please set EMAIL_ADDRESS, EMAIL_PASSWD and RECEIVER_ADDRESS.'
+    print 'Env variables not set please set IGOR_EMAIL_ADDRESS, IGOR_EMAIL_PASSWD and IGOR_RECEIVER_ADDRESS.'
     sys.exit(1)
 
 def notify(notification_method, receiver_address, url):

@@ -1,9 +1,9 @@
 import bot, notify, os, hashlib, sys
 
 try:
-    receiver_address = os.environ['RECEIVER_ADDRESS']
+    receiver_address = os.environ['IGOR_RECEIVER_ADDRESS']
 except:
-    print 'Set env variable RECEIVER_ADDRESS to the email address you want to send the alerts.'
+    print 'Set env variable IGOR_RECEIVER_ADDRESS to the email address you want to send the alerts.'
     sys.exit(1)
 
 urls = bot.open_config_file()
