@@ -2,4 +2,4 @@
 *.swo
 *.pyc
 env/
-versions/*
+ygor/versions/*
