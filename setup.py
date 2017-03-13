@@ -6,6 +6,7 @@ setup(
     description = 'An HTML bot / assistant',
     url = 'https://github.com/mbalamat/ygor'
     author = 'mbalamat',
+    author_email='mbalamatsias@gmail.com',
     license='MIT',
     classifiers = [
         'Development Status :: 4 - Beta',
