@@ -4,7 +4,7 @@ setup(
     name = 'ygor',
     version = '0.1',
     description = 'An HTML bot / assistant',
-    url = 'https://github.com/mbalamat/ygor'
+    url = 'https://github.com/mbalamat/ygor',
     author = 'mbalamat',
     author_email='mbalamatsias@gmail.com',
     license='MIT',
